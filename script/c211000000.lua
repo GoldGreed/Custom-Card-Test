@@ -32,7 +32,6 @@ function s.effop(e,tp,eg,ep,ev,re,r,rp,chk)
 	e1:SetOperation(s.retop)
 	e1:SetReset(RESET_EVENT|RESETS_STANDARD&~(RESET_TEMP_REMOVE|RESET_TURN_SET)|RESET_PHASE|PHASE_END)
 	c:RegisterEffect(e1)
-	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,c:GetAttack())
 end
 
 function s.retop(e,tp,eg,ep,ev,re,r,rp)
