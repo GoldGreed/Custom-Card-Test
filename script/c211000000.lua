@@ -45,4 +45,6 @@ function s.retop(e,tp,eg,ep,ev,re,r,rp)
 		Duel.SendtoHand(c,nil,REASON_EFFECT)
 end
 
+end
+
 --Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,c:GetAttack())
