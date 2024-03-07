@@ -23,6 +23,7 @@ end
 function s.effop(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	local e1=Effect.CreateEffect(c)
+	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,c:GetAttack())
 	e1:SetDescription(aux.Stringid(id,2))
 	e1:SetCategory(CATEGORY_TOHAND)
 	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
