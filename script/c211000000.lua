@@ -23,7 +23,7 @@ end
 function s.effop(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	local e1=Effect.CreateEffect(c)
-	Duel.Recover(tp,ec:GetAttack(),REASON_EFFECT)
+	Duel.Recover(tp,c:GetAttack(),REASON_EFFECT)
 	e1:SetDescription(aux.Stringid(id,2))
 	e1:SetCondition(function() return Duel.IsTurnPlayer(1-tp) end)
 	e1:SetCategory(CATEGORY_TOHAND)
