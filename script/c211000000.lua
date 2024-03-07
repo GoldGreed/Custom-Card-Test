@@ -23,7 +23,6 @@ end
 function s.effop(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	local e1=Effect.CreateEffect(c)
-	Duel.Recover(tp,c:GetAttack(),REASON_EFFECT)
 	e1:SetDescription(aux.Stringid(id,2))
 	e1:SetCondition(function() return Duel.IsTurnPlayer(1-tp) end)
 	e1:SetCategory(CATEGORY_TOHAND)
@@ -39,6 +38,7 @@ end
 function s.rettg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,e:GetHandler(),1,0,0)
+	Duel.Recover(tp,c:GetAttack(),REASON_EFFECT)
 end
 
 function s.retop(e,tp,eg,ep,ev,re,r,rp)
