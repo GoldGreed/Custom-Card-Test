@@ -1,6 +1,9 @@
 --Squadrion Trinatis
 local s,id,o=GetID()
 function s.initial_effect(c)
+	--fusion material
+	c:EnableReviveLimit()
+	Fusion.AddProcMixN(c,true,true,aux.FilterBoolFunctionEx(Card.IsSetCard,0x7e5),3)
 	--cannot be target
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
