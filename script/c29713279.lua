@@ -22,26 +22,10 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 
-function s.activate(e,tp,eg,ep,ev,re,r,rp)
-	local tc=Duel.GetFirstTarget()
-	if tc:IsRelateToEffect(e) and tc:IsFaceup() then
-		local e1=Effect.CreateEffect(e:GetHandler())
-		e1:SetType(EFFECT_TYPE_SINGLE)
-		e1:SetCode(EFFECT_UPDATE_ATTACK)
-		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
-		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
-		e1:SetValue(500)
-		tc:RegisterEffect(e1)
-		local e2=Effect.CreateEffect(e:GetHandler())
-		e2:SetType(EFFECT_TYPE_SINGLE)
-		e2:SetCode(EFFECT_INDESTRUCTABLE_COUNT)
-		e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
-		e2:SetCountLimit(1)
-		e2:SetValue(s.valcon)
-		e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
-		tc:RegisterEffect(e2)
-	end
+function s.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetCurrentPhase()~=PHASE_DAMAGE or not Duel.IsDamageCalculated()
 end
+
 function s.spfilter(c,e,tp)
 	return c:IsSetCard(0x7e5) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
