@@ -27,6 +27,9 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 
+function s.indval(e,re,tp)
+	return tp~=e:GetHandlerPlayer()
+end
 function s.atlimit(e,c)
 	return c~=e:GetHandler()
 end
