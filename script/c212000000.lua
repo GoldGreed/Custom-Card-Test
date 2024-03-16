@@ -12,7 +12,6 @@ function s.initial_effect(c)
 end
 
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
-	local seqs={}
 	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id,0))
 	local zone1=Duel.SelectFieldZone(tp,1,0,LOCATION_MZONE,0x60<<16)
 	table.insert(seqs, math.log(zone1,2)-16)
