@@ -1,7 +1,12 @@
 --Squadrion Flora
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--Special summon 1 "The Phantom Knights" monster from GY
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e1:SetValue(1)
+	c:RegisterEffect(e1)
+	--Special summon 1 "Squadrion" monster from GY
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
