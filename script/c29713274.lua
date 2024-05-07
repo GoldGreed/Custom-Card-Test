@@ -1,18 +1,21 @@
 --Mystical Bouncer
 local s,id,o=GetID()
 function s.initial_effect(c)
+	--Xyz Summon
+	Xyz.AddProcedure(c,nil,4,2)
+	c:EnableReviveLimit()
 	--destroy
-	local e2=Effect.CreateEffect(c)
-	e2:SetCategory(CATEGORY_DESTROY)
-	e2:SetType(EFFECT_TYPE_QUICK_O)
-	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
-	e2:SetCode(EVENT_FREE_CHAIN)
-	e2:SetRange(LOCATION_MZONE)
-	e2:SetCountLimit(1,29713274)
-	e2:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
-	e2:SetCost(c29713274.descost)
-	e2:SetTarget(c29713274.destg)
-	e2:SetOperation(c29713274.desop)
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_QUICK_O)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1,29713274)
+	e1:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
+	e1:SetCost(c29713274.descost)
+	e1:SetTarget(c29713274.destg)
+	e1:SetOperation(c29713274.desop)
 	c:RegisterEffect(e2)
 end
 
