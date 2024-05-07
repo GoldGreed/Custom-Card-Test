@@ -29,7 +29,7 @@ function s.initial_effect(c)
 	e2:SetOperation(c29713274.desop)
 	c:RegisterEffect(e2)
 end
-s.pendulum_level=7
+s.pendulum_level=4
 function c29713274.descost(e,tp,eg,ep,ev,re,r,rp,chk)
 	e:SetLabel(1)
 	return true
