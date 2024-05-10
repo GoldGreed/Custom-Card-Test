@@ -68,5 +68,5 @@ function s.thop(e,tp,eg,ep,ev,re,r,rp)
 end
 
 function s.filter(c)
-	return c:IsCode(29713272) and c:IsAbleToHand()
+	return c:IsCode(29713272) and c:IsAbleToHand() and c:IsControler(tp)
 end
