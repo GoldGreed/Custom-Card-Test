@@ -20,7 +20,7 @@ function s.spfilter(c,tp)
 end
 
 function s.filter(c,e,tp)
-	return c:IsType(TYPE_NORMAL) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return eg:IsExists(s.spfilter,1,nil,tp)
 end
 
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
