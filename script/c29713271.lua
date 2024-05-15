@@ -23,7 +23,7 @@ function s.filter(c,e,tp)
 	return c:IsType(TYPE_NORMAL) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 
-function s.con(e,tp,eg,ep,ev,re,r,rp)
+function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsLocation(LOCATION_GRAVE) and e:GetHandler():IsReason(REASON_BATTLE)
 end
 
