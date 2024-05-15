@@ -16,7 +16,7 @@ function s.initial_effect(c)
 end
 
 function s.spfilter(c,tp)
-	return c:IsReason(REASON_DESTROY) and c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousControler(tp) and c:IsMonster()
+	return c:IsLocation(LOCATION_GRAVE) and c:IsReason(REASON_DESTROY) and c:IsPreviousControler(tp) and c:IsMonster()
 end
 
 function s.filter(c,e,tp)
