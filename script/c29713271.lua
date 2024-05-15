@@ -24,7 +24,7 @@ function s.filter(c,e,tp)
 end
 
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
-	return eg:IsExists(s.spfilter,1,nil,tp,rp)
+	return not eg:IsContains(e:GetHandler()) and eg:IsExists(s.spfilter,1,nil,tp)
 end
 
 
