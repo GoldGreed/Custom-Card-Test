@@ -6,10 +6,16 @@ function s.initial_effect(c)
 	c:SetSPSummonOnce(id)
 	--Xyz Summon Procedure
 	Xyz.AddProcedure(c,nil,8,2,s.ovfilter,aux.Stringid(id,0))
-	--Detach 1 material from this card instead of a card(s) you control being destroyed by battle or card effect
+	--atk down
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetRange(LOCATION_PZONE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetTargetRange(0,LOCATION_MZONE)
+	e1:SetValue(-300)
+	c:RegisterEffect(e1)
 end
 s.listed_names={id}
-s.listed_series={SET_ORCUST}
 function s.ovfilter(c,tp,xyzc)
 	return c:IsFaceup() and c:IsType(TYPE_NORMAL,xyzc,SUMMON_TYPE_XYZ,tp)
 end
