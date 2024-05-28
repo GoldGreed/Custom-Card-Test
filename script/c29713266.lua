@@ -21,7 +21,7 @@ function s.condition(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local desg=Duel.GetFieldGroup(tp,0,LOCATION_ONFIELD)
-	if chk==0 then return #desg>0 end
+	if chk==0 then return #desg>0 and Duel.IsExistingMatchingCard(aux.TRUE,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_DESTROY,desg,#desg,0,0)
 	Duel.SetTargetPlayer(1-tp)
 	Duel.SetTargetParam(1000)
