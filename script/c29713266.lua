@@ -30,7 +30,7 @@ end
 function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	local desg=Duel.GetFieldGroup(tp,0,LOCATION_ONFIELD)
 	if #desg>0 then
-		Duel.Destroy(aux.TRUE,tp,LOCATION_MZONE,LOCATION_MZONE,nil)
+		Duel.Destroy(desg,REASON_EFFECT)
 		Duel.Damage(p,d,REASON_EFFECT)
 	end
 end
