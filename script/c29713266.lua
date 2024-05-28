@@ -22,10 +22,10 @@ end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local desg=Duel.GetFieldGroup(tp,0,LOCATION_ONFIELD)
 	if chk==0 then return #desg>0 end
-	Duel.SetOperationInfo(0,CATEGORY_DESTROY,desg,#desg,0,0)
-	Duel.SetTargetPlayer(1-tp)
-	Duel.SetTargetParam(1000)
-	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,1000)
+--	Duel.SetOperationInfo(0,CATEGORY_DESTROY,desg,#desg,0,0)
+  --  Duel.SetTargetPlayer(1-tp)
+   -- Duel.SetTargetParam(1000)
+	--Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,1000)
 end
 function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	local desg=Duel.GetFieldGroup(tp,0,LOCATION_ONFIELD)
