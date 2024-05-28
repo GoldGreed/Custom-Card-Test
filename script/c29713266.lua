@@ -20,8 +20,8 @@ function s.condition(e,tp,eg,ep,ev,re,r,rp)
 		and Duel.IsExistingMatchingCard(aux.FaceupFilter(Card.IsCode,29713267),tp,LOCATION_ONFIELD,0,1,nil)
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	local desg=Duel.GetFieldGroup(0,0,LOCATION_ONFIELD)
-	if chk==0 then return #desg>0 end
+	local desg=Duel.GetMatchingGroup(aux.TRUE,tp,LOCATION_MZONE,LOCATION_MZONE,nil)
+	if chk==0 then return #desg>0 anf Duel.IsExistingMatchingCard(aux.TRUE,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end
 	Duel.SetOperationInfo(0,CATEGORY_DESTROY,desg,#desg,0,0)
 	Duel.SetTargetPlayer(1-tp)
 	Duel.SetTargetParam(1000)
