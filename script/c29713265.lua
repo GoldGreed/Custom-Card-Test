@@ -10,10 +10,10 @@ function c29713265.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 
-function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	return eg:IsExists(s.cfilter,1,nil,tp)
+function s.spfilter(c,tp)
+	return c:IsReason(REASON_DESTROY) and c:IsPreviousControler(tp) and c:IsMonster()
 end
 
-function s.cfilter(c,tp)
-	return c:IsReason(REASON_DESTROY) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousControler(tp)
+function s.condition(e,tp,eg,ep,ev,re,r,rp)
+	return not eg:IsContains(e:GetHandler()) and eg:IsExists(s.spfilter,1,nil,tp)
 end
