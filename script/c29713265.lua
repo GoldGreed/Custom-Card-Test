@@ -12,12 +12,12 @@ function c29713265.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 
-function s.cfilter(c,tp)
-	return c:IsReason(REASON_DESTROY) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousControler(tp)
-end
-
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.cfilter,1,nil,tp)
+end
+
+function s.cfilter(c,tp)
+	return c:IsReason(REASON_DESTROY) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousControler(tp)
 end
 
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
