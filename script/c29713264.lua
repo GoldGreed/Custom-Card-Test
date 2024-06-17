@@ -19,7 +19,7 @@ end
 
 function s.cfilter(c,tp,rp)
 	return c:IsPreviousControler(tp) and c:IsPreviousLocation(LOCATION_MZONE) and
-		c:IsReason(REASON_DESTROY) and c:GetReasonPlayer()==1-tp)
+		(c:IsReason(REASON_DESTROY) and c:GetReasonPlayer()==1-tp)
 end
 
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
