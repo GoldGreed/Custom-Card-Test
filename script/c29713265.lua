@@ -18,3 +18,9 @@ end
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
 	return not eg:IsContains(e:GetHandler()) and eg:IsExists(s.spfilter,1,nil,tp)
 end
+
+function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	local exc=(e:IsHasType(EFFECT_TYPE_ACTIVATE) and c:IsRelateToEffect(e)) and c or nil
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg+rc:GetColumnGroup():RemoveCard(exc),1,0,0)
+end
