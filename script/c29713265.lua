@@ -8,7 +8,6 @@ function c29713265.initial_effect(c)
 	e1:SetCode(EVENT_CHAINING)
 	e1:SetCondition(s.condition)
 	e1:SetTarget(s.target)
-	e1:SetOperation(s.operation)
 	c:RegisterEffect(e1)
 end
 
@@ -26,16 +25,5 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 		local c=e:GetHandler()
 		local exc=(e:IsHasType(EFFECT_TYPE_ACTIVATE) and c:IsRelateToEffect(e)) and c or nil
 		Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg+rc:GetColumnGroup():RemoveCard(exc),1,0,0)
-	end
-end
-function s.operation(e,tp,eg,ep,ev,re,r,rp)
-	local rc=re:GetHandler()
-	local c=e:GetHandler()
-	local exc=(e:IsHasType(EFFECT_TYPE_ACTIVATE) and c:IsRelateToEffect(e)) and c or nil
-	local colg=rc:GetColumnGroup()
-	if exc then colg:RemoveCard(exc) end
-	if Duel.Destroy(eg,REASON_EFFECT)>0 and #colg>0 then
-		Duel.BreakEffect()
-		Duel.Destroy(colg,REASON_EFFECT)
 	end
 end
