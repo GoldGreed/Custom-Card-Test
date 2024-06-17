@@ -12,30 +12,6 @@ function c29713265.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 
-function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	local loc=Duel.GetChainInfo(ev,CHAININFO_TRIGGERING_LOCATION)
-	return loc&LOCATION_ONFIELD>0 and (re:IsMonsterEffect() or re:IsHasType(EFFECT_TYPE_ACTIVATE))
-		and Duel.IsChainNegatable(ev)
-end
-
---鉄騎の雷鎚
---Iron Thunder
---scripted by Naim
-local s,id=GetID()
-function s.initial_effect(c)
-	--Negate an activation, destroy the card and all cards in the same column
-	local e1=Effect.CreateEffect(c)
-	e1:SetDescription(aux.Stringid(id,0))
-	e1:SetCategory(CATEGORY_NEGATE+CATEGORY_DESTROY)
-	e1:SetType(EFFECT_TYPE_ACTIVATE)
-	e1:SetCode(EVENT_CHAINING)
-	e1:SetCondition(s.condition)
-	e1:SetCost(s.cost)
-	e1:SetTarget(s.target)
-	e1:SetOperation(s.operation)
-	c:RegisterEffect(e1)
-end
-
 function s.cfilter(c,tp)
 	return c:IsReason(REASON_DESTROY) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousControler(tp)
 end
