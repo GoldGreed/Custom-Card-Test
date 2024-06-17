@@ -1,4 +1,5 @@
 --Crystal Clear Prison
+local s,id,o=GetID()
 function c29713265.initial_effect(c)
 	--Negate an activation, destroy the card and all cards in the same column
 	local e1=Effect.CreateEffect(c)
