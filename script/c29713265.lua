@@ -18,7 +18,7 @@ function s.spfilter(c,tp)
 end
 
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
-	return not eg:IsContains(e:GetHandler()) and eg:IsExists(s.spfilter,1,nil,tp)
+	return eg:IsExists(s.spfilter,1,nil,tp)
 end
 
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
