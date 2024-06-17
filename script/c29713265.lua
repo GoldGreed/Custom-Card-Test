@@ -7,10 +7,10 @@ function c29713265.initial_effect(c)
 	e1:SetCategory(CATEGORY_DESTROY)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_CHAINING)
-	e1:SetCondition(s.condition)
-	c:RegisterEffect(e1)
+	e1:SetCondition(s.condition) 
 	e1:SetTarget(s.target)
 	e1:SetOperation(s.operation)
+	c:RegisterEffect(e1)
 end
 
 function s.spfilter(c,tp)
@@ -23,7 +23,7 @@ end
 
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
-	local exc=(e:IsHasType(EFFECT_TYPE_ACTIVATE) and c:IsRelateToEffect(e)) and c or nil
+	local exc=(e:IsHasType(EFFECT_TYPE_ACTIVATE)
 	Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg+rc:GetColumnGroup():RemoveCard(exc),1,0,0)
 end
 
