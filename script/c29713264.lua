@@ -53,15 +53,15 @@ function s.atkcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.atkcfilter,tp,LOCATION_GRAVE,0,1,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
 	local g=Duel.SelectMatchingCard(tp,s.atkcfilter,tp,LOCATION_GRAVE,0,1,2,nil)
-	local ct=Duel.Remove(g,POS_FACEUP,REASON_COST)
+	local ct=Duel.Remove(g,POS_FACEDOWN,REASON_COST)
 	e:SetLabel(ct)
 end
 function s.atkop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if not c:IsRelateToEffect(e) or c:IsFacedown() then return end
-	c:UpdateAttack(e:GetLabel()*400)
+	c:UpdateAttack(e:GetLabel()*200)
 end
 
-function s.atkcfilter(c,lv)
-	return c:IsAbleToRemoveAsCost() and c:IsLevel()
+function s.atkcfilter(c)
+	return c:IsAbleToRemoveAsCost()
 end
