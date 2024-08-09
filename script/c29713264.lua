@@ -52,7 +52,7 @@ end
 function s.atkcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.atkcfilter,tp,LOCATION_GRAVE,0,1,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
-	local g=Duel.SelectMatchingCard(tp,s.atkcfilter,tp,LOCATION_GRAVE,0,1,3,nil)
+	local g=Duel.SelectMatchingCard(tp,s.atkcfilter,tp,LOCATION_GRAVE,0,1,2,nil)
 	local ct=Duel.Remove(g,POS_FACEDOWN,REASON_COST)
 	e:SetLabel(ct)
 end
