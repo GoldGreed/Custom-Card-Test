@@ -62,6 +62,6 @@ function s.atkop(e,tp,eg,ep,ev,re,r,rp)
 	c:UpdateAttack(e:GetLabel()*400)
 end
 
-function s.atkcfilter(c)
+function s.atkcfilter(c,lv)
 	return c:IsAbleToRemoveAsCost() and c:IsLevel()
 end
