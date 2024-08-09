@@ -63,5 +63,5 @@ function s.atkop(e,tp,eg,ep,ev,re,r,rp)
 end
 
 function s.atkcfilter(c)
-	return c:IsAbleToRemoveAsCost() and C:IsMonster()
+	return c:IsAbleToRemoveAsCost() and c:IsLevel()
 end
