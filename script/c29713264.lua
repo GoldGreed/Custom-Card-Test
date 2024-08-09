@@ -1,6 +1,6 @@
 --Crystal Swordmaster
 local s,id,o=GetID()
-function c29713264.initial_effect(c)
+function s.initial_effect(c)
 	--Special summon from hand or GY
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -63,5 +63,5 @@ function s.atkop(e,tp,eg,ep,ev,re,r,rp)
 end
 
 function s.atkcfilter(c)
-	return c:IsAbleToRemoveAsCost()
+	return c:IsAbleToRemoveAsCost() and C:IsMonster()
 end
