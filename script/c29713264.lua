@@ -1,7 +1,7 @@
 --Crystal Swordmaster
 local s,id,o=GetID()
 function s.initial_effect(c)
-	--Special summon from hand or GY
+	--Special summon from hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
